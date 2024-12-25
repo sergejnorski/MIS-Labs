@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab_2/firebase/firebase_api.dart';
 import 'screens/home_screen.dart';
 import 'screens/random_joke_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await FirebaseApi().initNotifications();
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
